@@ -2,11 +2,11 @@
 
 ```
 sudo apt update
-sudo apt install imagemagick
+sudo apt install librsvg2-bin
 ```
 
 ```
 for file in $(find . -name "*.svg"); do
-    convert "$file" "${file%.svg}.png"
+    rsvg-convert -o "${file%.svg}.png" "$file"
 done
 ```
